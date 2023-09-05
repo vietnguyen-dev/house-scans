@@ -1,11 +1,15 @@
-import { Inter } from "next/font/google";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Inter } from "next/font/google";
+
 import Logo from "../../public/next.svg";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
+
   return (
     <main className={`${inter.className}`}>
       <nav className="navbar px-6 py-3 md:px-12 md:py-6 md:justify-between">
@@ -32,7 +36,10 @@ export default function Home() {
           <button className="btn btn-primary flex-none ">
             <Link href="/booking">Book Now</Link>
           </button>
-          <button className="btn btn-square btn-ghost ml-3 md:hidden">
+          <button
+            className="btn btn-square btn-ghost ml-3 md:hidden"
+            onClick={() => setShowMobileNav(!showMobileNav)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -48,6 +55,19 @@ export default function Home() {
             </svg>
           </button>
         </div>
+        {showMobileNav && (
+          <div className="absolute border-2 border-black bg-white md:hidden">
+            <Link href="/how-it-works" className="mr-3 align-middle">
+              How it Works
+            </Link>
+            <Link href="/faq" className="mr-3">
+              FAQs
+            </Link>
+            <Link href="/testimonials" className="mr-3">
+              Testimonials
+            </Link>
+          </div>
+        )}
       </nav>
     </main>
   );
