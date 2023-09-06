@@ -6,7 +6,7 @@ export const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
 
   return (
-    <nav className="navbar px-6 py-3 md:px-12 md:py-6 md:justify-between">
+    <nav className="navbar px-6 py-3 md:justify-between md:px-12 md:py-6">
       <Link href="/" className="flex-1 md:flex-none">
         <Image
           src={"/next.svg"}
