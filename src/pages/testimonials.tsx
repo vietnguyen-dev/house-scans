@@ -64,7 +64,7 @@ export default function Testimonials({
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const data = await axios.get(`${process.env.API_URL}/testimonials`);
     const testimonials = data.data.data;
