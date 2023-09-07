@@ -40,10 +40,13 @@ export default function Testimonials({
   return (
     <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
       <Navbar />
-      <h1 className="text-center mt-3 font-bold text-3xl">Testimonials</h1>
-      <div className="px-6 flex justify-center gap-4">
+      <h1 className="text-center my-3 font-bold text-3xl">Testimonials</h1>
+      <div className="px-6 flex flex-col justify-center items-center">
         {testimonials.map((testimonial) => (
-          <div className="card w-72 bg-base-100 shadow-xl" key={testimonial.id}>
+          <div
+            className="card w-72 bg-base-100 shadow-xl mb-3"
+            key={testimonial.id}
+          >
             <div className="card-body">
               <h2 className="card-title">{testimonial.attributes.name}</h2>
               <div className="rating">
