@@ -6,7 +6,7 @@ export const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
 
   return (
-    <nav className="navbar px-6 py-3 md:justify-between md:px-12 md:py-6">
+    <nav className="navbar px-6 py-3 sm:justify-between sm:px-12 sm:py-6">
       <Link href="/" className="flex-1 md:flex-none">
         <Image
           src={"/next.svg"}
@@ -16,13 +16,13 @@ export const Navbar = () => {
         />
       </Link>
       <div className="hidden md:block">
-        <Link href="/how-it-works" className="mr-3 align-middle">
+        <Link href="/how-it-works" className="mr-3 xl:mr-6">
           How it Works
         </Link>
-        <Link href="/faq" className="mr-3">
+        <Link href="/faq" className="mr-3 xl:mr-6">
           FAQs
         </Link>
-        <Link href="/testimonials" className="mr-3">
+        <Link href="/testimonials" className="mr-3 xl:mr-6">
           Testimonials
         </Link>
       </div>

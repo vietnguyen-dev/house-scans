@@ -37,9 +37,8 @@ export default function Testimonials({
 }: {
   testimonials: iTestimonial[];
 }) {
-  console.log(testimonials);
   return (
-    <main className={`${inter.className}`}>
+    <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
       <Navbar />
       <h1 className="text-center mt-3 font-bold text-3xl">Testimonials</h1>
       <div className="px-6 flex justify-center gap-4">
