@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import axios from "axios";
 
 import { Navbar } from "@/components/navbar";
+import CTA from "@/components/cta";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,13 +54,11 @@ export default function Testimonials({
                 <Rating number={testimonial.attributes.rating} />
               </div>
               <p>{testimonial.attributes.review}</p>
-              {/* <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
-              </div> */}
             </div>
           </div>
         ))}
       </div>
+      <CTA />
     </main>
   );
 }
