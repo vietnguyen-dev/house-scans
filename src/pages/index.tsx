@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import HowItWorksSlider from "@/components/how-it-works";
+import Help from "@/components/help";
 import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,6 +30,7 @@ export default function Home() {
         </div>
       </div>
       <HowItWorksSlider />
+      <Help />
       <Footer />
     </main>
   );

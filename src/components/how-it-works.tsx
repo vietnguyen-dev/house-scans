@@ -10,7 +10,7 @@ const HowItWorksSlider = () => {
   return (
     <div className="mt-9 px-6 py-3 sm:px-12 sm:py-6" id="how-it-works">
       <h3 className="text-center text-2xl font-bold">How it Works</h3>
-      <div className="relative">
+      <div className="relative md:w-1/2 md:left-1/4">
         <div className="flex justify-between mt-3">
           <button
             className={`btn btn-circle btn-info z-10`}
@@ -37,9 +37,9 @@ const HowItWorksSlider = () => {
           max="100"
         ></progress>
       </div>
-      <div className="mt-3">
+      <div className="mt-3 lg:hidden">
         {step === 0 && (
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-base-100 shadow-xl md:w-1/2 md:left-1/4">
             <figure className="border-black border-2">
               {/* <img
                 src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -60,7 +60,7 @@ const HowItWorksSlider = () => {
           </div>
         )}
         {step === 1 && (
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-base-100 shadow-xl md:w-1/2 md:left-1/4">
             <figure className="border-black border-2">
               {/* <img
                 src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -81,7 +81,7 @@ const HowItWorksSlider = () => {
           </div>
         )}
         {step === 2 && (
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-base-100 shadow-xl md:w-1/2 md:left-1/4">
             <figure className="border-black border-2">
               {/* <img
                 src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -101,6 +101,67 @@ const HowItWorksSlider = () => {
             </div>
           </div>
         )}
+      </div>
+      <div className="hidden mt-3 lg:block">
+        <div className="flex gap-4 mx-24">
+          <div className="card bg-base-100 w-96 shadow-xl">
+            <figure className="border-black border-2">
+              {/* <img
+                src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                className="rounded-xl"
+              /> */}
+              <div>
+                <p>placeholder Image 2 Hidden</p>
+              </div>
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title">Shoes!</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions">
+                <button className="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 w-96 shadow-xl">
+            <figure className="border-black border-2">
+              {/* <img
+                src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                className="rounded-xl"
+              /> */}
+              <div>
+                <p>placeholder Image 2 Hidden</p>
+              </div>
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title">Shoes!</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions">
+                <button className="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 w-96 shadow-xl">
+            <figure className="border-black border-2">
+              {/* <img
+                src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                className="rounded-xl"
+              /> */}
+              <div>
+                <p>placeholder Image 2 Hidden</p>
+              </div>
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title">Shoes!</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions">
+                <button className="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
