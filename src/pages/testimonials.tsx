@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { Navbar } from "@/components/navbar";
 import CTA from "@/components/cta";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,23 +43,27 @@ export default function Testimonials({
     <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
       <Navbar />
       <h1 className="text-center my-3 font-bold text-3xl">Testimonials</h1>
-      <div className="px-6 flex flex-col justify-center items-center">
-        {testimonials.map((testimonial) => (
-          <div
-            className="card w-72 bg-base-100 shadow-xl mb-3"
-            key={testimonial.id}
-          >
-            <div className="card-body">
-              <h2 className="card-title">{testimonial.attributes.name}</h2>
-              <div className="rating">
-                <Rating number={testimonial.attributes.rating} />
+      <div className="flex justify-center">
+        <div className="px-6 grid grid-cols-1 items-center md:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((testimonial) => (
+            <div
+              className="card w-72 bg-base-100 shadow-xl mb-3 mr-3"
+              key={testimonial.id}
+            >
+              <div className="card-body">
+                <h2 className="card-title">{testimonial.attributes.name}</h2>
+                <div className="rating">
+                  <Rating number={testimonial.attributes.rating} />
+                </div>
+                <p>{testimonial.attributes.review}</p>
               </div>
-              <p>{testimonial.attributes.review}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+
       <CTA />
+      <Footer />
     </main>
   );
 }

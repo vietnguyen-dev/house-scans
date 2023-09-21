@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const Navbar = () => {
-  const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
-
   return (
     <nav className="navbar px-6 py-3 sm:justify-between sm:px-12 sm:py-6">
       <Link href="/" className="flex-1 md:flex-none">
@@ -32,47 +30,51 @@ export const Navbar = () => {
         </button>
         <button
           className="btn btn-square btn-ghost ml-3 md:hidden"
-          onClick={() => setShowMobileNav(!showMobileNav)}
+          onClick={() => {
+            if (document) {
+              (
+                document.getElementById("nav-modal") as HTMLFormElement
+              ).showModal();
+            }
+          }}
         >
-          {showMobileNav ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="inline-block w-5 h-5 stroke-current"
+          >
+            <path
               strokeLinecap="round"
               strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-5 h-5 stroke-current"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          )}
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
         </button>
       </div>
-      {showMobileNav && (
-        <ul className="flex absolute right-5 top-16 menu bg-base-200 w-56 h-28 rounded-box md:hidden">
-          <Link href="/how-it-works">How it Works</Link>
-          <Link href="/faq">FAQs</Link>
-          <Link href="/testimonials">Testimonials</Link>
-        </ul>
-      )}
+      <dialog id="nav-modal" className="modal">
+        <div className="modal-box">
+          <form method="dialog">
+            {/* if there is a button in form, it will close the modal */}
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 font-2xl">
+              ✕
+            </button>
+          </form>
+          {/* <h3 className="font-bold text-lg">Hello!</h3> */}
+          <ul className="py-4 flex flex-col">
+            <Link href="/how-it-works" className="mr-3 mb-3 text-right text-xl">
+              How it Works
+            </Link>
+            <Link href="/faq" className="mr-3 mb-3 text-right text-xl">
+              FAQs
+            </Link>
+            <Link href="/testimonials" className="mr-3 xl text-right text-xl">
+              Testimonials
+            </Link>
+          </ul>
+        </div>
+      </dialog>
     </nav>
   );
 };

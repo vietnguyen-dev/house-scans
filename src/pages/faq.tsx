@@ -4,6 +4,7 @@ import axios from "axios";
 
 import { Navbar } from "@/components/navbar";
 import CTA from "@/components/cta";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,6 +62,7 @@ const FAQs = ({ faqs }: { faqs: iFAQ[] }) => {
         </div>
       </div>
       <CTA />
+      <Footer />
     </main>
   );
 };
