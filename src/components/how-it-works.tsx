@@ -13,13 +13,13 @@ const HowItWorksSlider = () => {
       <div className="flex justify-between mt-3">
         <button
           className={`btn btn-circle btn-accent`}
-          onClick={() => newStep(33)}
+          onClick={() => newStep(0)}
         >
           1
         </button>
         <button
-          className={`btn btn-circle ${progress > 65 && "btn-accent"}`}
-          onClick={() => newStep(66)}
+          className={`btn btn-circle ${progress > 49 && "btn-accent"}`}
+          onClick={() => newStep(50)}
         >
           2
         </button>
@@ -31,7 +31,7 @@ const HowItWorksSlider = () => {
         </button>
       </div>
       <progress
-        className="progress w-full mx-auto relative top-1"
+        className="progress w-full mx-auto"
         value={progress}
         max="100"
       ></progress>
