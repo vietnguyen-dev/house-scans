@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-interface iWorksProps {
+export interface iWorks {
   id: number;
   attributes: {
     title: string;
@@ -13,7 +13,7 @@ interface iWorksProps {
 }
 
 interface iHowItWorksSliderProps {
-  works: iWorksProps[];
+  works: iWorks[];
 }
 
 const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({ works }) => {
