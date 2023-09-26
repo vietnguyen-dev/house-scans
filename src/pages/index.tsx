@@ -14,6 +14,7 @@ import Footer from "@/components/footer";
 import { iTestimonial } from "./testimonials";
 import { iFAQ } from "./faq";
 import { iWorks } from "@/components/how-it-works";
+import { iHelp } from "@/components/help";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,10 +22,10 @@ interface iHomeProps {
   testimonials: iTestimonial[];
   faqs: iFAQ[];
   works: iWorks[];
+  helps: iHelp[];
 }
 
 const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
-  console.log(helps);
   return (
     <>
       <Head>
