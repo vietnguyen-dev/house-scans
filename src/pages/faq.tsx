@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Inter } from "next/font/google";
+import Head from "next/head";
 import axios from "axios";
 
 import { Navbar } from "@/components/navbar";
@@ -8,7 +9,7 @@ import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-interface iFAQ {
+export interface iFAQ {
   id: number;
   attributes: {
     createdAt: Date;
@@ -32,38 +33,43 @@ const FAQs = ({ faqs }: { faqs: iFAQ[] }) => {
     }
   };
   return (
-    <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
-      <Navbar />
-      <h1 className="text-center my-3 font-bold text-3xl">FAQs</h1>
-      <div className="mx-3 md:w-2/3 md:mx-auto">
-        <div className="join join-vertical">
-          {faqs.map((faq, index) => (
-            <div
-              className="collapse collapse-plus join-item border border-base-300"
-              key={index}
-            >
-              <input
-                type="radio"
-                name="my-accordion-4"
-                checked={openIndex === index}
-                onChange={() => handleAccordionClick(index)}
-              />
+    <>
+      <Head>
+        <title>360P Scans | FAQs</title>
+      </Head>
+      <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
+        <Navbar />
+        <h1 className="text-center my-3 font-bold text-3xl">FAQs</h1>
+        <div className="mx-3 md:w-2/3 md:mx-auto">
+          <div className="join join-vertical">
+            {faqs.map((faq, index) => (
               <div
-                className="collapse-title text-xl font-medium "
-                onClick={() => handleAccordionClick(index)}
+                className="collapse collapse-plus join-item border border-base-300"
+                key={index}
               >
-                <h3 className="text-xl ">{faq.attributes.question}</h3>
+                <input
+                  type="radio"
+                  name="my-accordion-4"
+                  checked={openIndex === index}
+                  onChange={() => handleAccordionClick(index)}
+                />
+                <div
+                  className="collapse-title text-xl font-medium "
+                  onClick={() => handleAccordionClick(index)}
+                >
+                  <h3 className="text-xl ">{faq.attributes.question}</h3>
+                </div>
+                <div className="collapse-content">
+                  <p>{faq.attributes.answer}</p>
+                </div>
               </div>
-              <div className="collapse-content">
-                <p>{faq.attributes.answer}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-      <CTA />
-      <Footer />
-    </main>
+        <CTA />
+        <Footer />
+      </main>
+    </>
   );
 };
 

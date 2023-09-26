@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export const Navbar = () => {
+  const [path, setPath] = useState<string | null>("/");
+
+  useEffect(() => {
+    setPath(window.location.pathname);
+  }, []);
+
   return (
     <nav className="navbar px-6 py-3 sm:justify-between sm:px-12 sm:py-6">
       <Link href="/" className="flex-1 md:flex-none">
@@ -14,14 +20,37 @@ export const Navbar = () => {
         />
       </Link>
       <div className="hidden md:block">
-        <Link href="/how-it-works" className="mr-3 xl:mr-6">
+        <Link
+          href="/how-it-works"
+          className={`mr-3 xl:mr-6 ${
+            path?.includes("how-it-works") && "link"
+          } hover:link`}
+        >
           How it Works
         </Link>
-        <Link href="/faq" className="mr-3 xl:mr-6">
+        <Link
+          href="/faq"
+          className={`mr-3 xl:mr-6 ${
+            path?.includes("faq") && "link"
+          } hover:link`}
+        >
           FAQs
         </Link>
-        <Link href="/testimonials" className="mr-3 xl:mr-6">
+        <Link
+          href="/testimonials"
+          className={`mr-3 xl:mr-6 ${
+            path?.includes("testimonials") && "link"
+          } hover:link`}
+        >
           Testimonials
+        </Link>
+        <Link
+          href="/service-area"
+          className={`mr-3 xl:mr-6 ${
+            path?.includes("service-area") && "link"
+          } hover:link`}
+        >
+          Service Area
         </Link>
       </div>
       <div className="flex-none">
@@ -69,8 +98,11 @@ export const Navbar = () => {
             <Link href="/faq" className="mr-3 mb-3 text-right text-xl">
               FAQs
             </Link>
-            <Link href="/testimonials" className="mr-3 xl text-right text-xl">
+            <Link href="/testimonials" className="mr-3 mb-3 text-right text-xl">
               Testimonials
+            </Link>
+            <Link href="/service-area" className="mr-3 mb-3 text-right text-xl">
+              Service Area
             </Link>
           </ul>
         </div>

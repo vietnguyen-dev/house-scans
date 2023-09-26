@@ -7,7 +7,7 @@ import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-interface iTestimonial {
+export interface iTestimonial {
   id: number;
   attributes: {
     createdAt: Date;
@@ -19,7 +19,7 @@ interface iTestimonial {
   };
 }
 
-function Rating(props: { number: number }) {
+export function Rating(props: { number: number }) {
   const inputElements = Array.from({ length: props.number }, (_, index) => (
     <input
       key={index}
@@ -34,11 +34,11 @@ function Rating(props: { number: number }) {
   return <div>{inputElements}</div>;
 }
 
-export default function Testimonials({
-  testimonials,
-}: {
+export interface iTestimonialProps {
   testimonials: iTestimonial[];
-}) {
+}
+
+const Testimonials: React.FC<iTestimonialProps> = ({ testimonials }) => {
   return (
     <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
       <Navbar />
@@ -100,11 +100,13 @@ export default function Testimonials({
       <Footer />
     </main>
   );
-}
+};
+
+export default Testimonials;
 
 export async function getServerSideProps() {
   try {
-    const data = await axios.get(`${process.env.API_URL}/testimonials`);
+    const data = await axios.get(`${process.env.API_URL}/testimonials?`);
     const testimonials = data.data.data;
     return {
       props: {
