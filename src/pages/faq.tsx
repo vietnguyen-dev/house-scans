@@ -20,7 +20,11 @@ export interface iFAQ {
   };
 }
 
-const FAQs = ({ faqs }: { faqs: iFAQ[] }) => {
+export interface iFAQsProps {
+  faqs: iFAQ[];
+}
+
+const FAQs: React.FC<iFAQsProps> = ({ faqs }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const handleAccordionClick = (index: number) => {

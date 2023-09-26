@@ -17,7 +17,6 @@ interface iHowItWorksSliderProps {
 }
 
 const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({ works }) => {
-  console.log(works);
   const [step, setStep] = useState<number>(0);
   const [startX, setStartX] = useState<number | null>(null);
   const [endX, setEndX] = useState<number | null>(null);

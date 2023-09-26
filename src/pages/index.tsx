@@ -7,6 +7,7 @@ import { Navbar } from "@/components/navbar";
 import HowItWorksSlider from "@/components/how-it-works";
 import Help from "@/components/help";
 import Testimonials from "@/components/testimonials";
+import FAQ from "@/components/faq";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
 
@@ -22,8 +23,8 @@ interface iHomeProps {
   works: iWorks[];
 }
 
-const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works }) => {
-  console.log(works);
+const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
+  console.log(helps);
   return (
     <>
       <Head>
@@ -50,7 +51,8 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works }) => {
           </div>
         </div>
         <HowItWorksSlider works={works} />
-        <Help />
+        <Help helps={helps} />
+        <FAQ faqs={faqs} />
         <Testimonials testimonials={testimonials} />
         <CTA />
         <Footer />
@@ -66,16 +68,21 @@ export async function getStaticProps() {
     const testimonialData = await axios.get(
       `${process.env.API_URL}/testimonials?pagination[pageSize]=3`
     );
-    const faqData = await axios.get(`${process.env.API_URL}/faqs`);
+    const faqData = await axios.get(
+      `${process.env.API_URL}/faqs?pagination[pageSize]=3`
+    );
     const worksData = await axios.get(`${process.env.API_URL}/works`);
+    const helpsData = await axios.get(`${process.env.API_URL}/helps`);
     const testimonials = testimonialData.data.data;
     const faqs = faqData.data.data;
     const works = worksData.data.data;
+    const helps = helpsData.data.data;
     return {
       props: {
         testimonials,
         faqs,
         works,
+        helps,
       },
     };
   } catch (err) {
