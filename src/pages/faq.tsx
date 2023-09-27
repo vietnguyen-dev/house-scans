@@ -39,7 +39,10 @@ const FAQs: React.FC<iFAQsProps> = ({ faqs }) => {
   return (
     <>
       <Head>
-        <title>360P Scans | FAQs</title>
+        <title>
+          360P Scans | FAQs | Frequently Asked Questions | Portland, OR |
+          Vancouver, WA
+        </title>
       </Head>
       <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
         <Navbar />

@@ -16,8 +16,8 @@ const FAQ: React.FC<iFAQsProps> = ({ faqs }) => {
 
   return (
     <div className="mt-12 px-6 py-3 sm:px-12 sm:py-6">
-      <h3 className="mt-6 text-center text-3xl font-bold">FAQs</h3>
-      <div className="mx-3 md:w-2/3 md:mx-auto">
+      <h3 className="text-center text-3xl font-bold">FAQs</h3>
+      <div className="mt-6 mx-3 md:w-2/3 md:mx-auto">
         <div className="join join-vertical">
           {faqs.map((faq, index) => (
             <div

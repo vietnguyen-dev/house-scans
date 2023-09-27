@@ -7,7 +7,7 @@ const CTA = () => {
         Boost your home sale with 3D scans! 🏡 <br />
         Elevate your listing – 3D-sell your house now!
       </h3>
-      <button className="btn btn-primary">
+      <button className="btn btn-primary z-50">
         <Link href="/booking">Book Now</Link>
       </button>
     </div>

@@ -12,11 +12,15 @@ export interface iWorks {
   };
 }
 
-interface iHowItWorksSliderProps {
+export interface iHowItWorksSliderProps {
   works: iWorks[];
+  title: boolean | null;
 }
 
-const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({ works }) => {
+const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({
+  works,
+  title,
+}) => {
   const [step, setStep] = useState<number>(0);
   const [startX, setStartX] = useState<number | null>(null);
   const [endX, setEndX] = useState<number | null>(null);
@@ -46,8 +50,13 @@ const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({ works }) => {
   };
 
   return (
-    <div className="mt-16 px-6 py-3 sm:px-12 sm:py-6" id="how-it-works">
-      <h3 className="text-center text-3xl font-bold">How it Works</h3>
+    <div
+      className={`${title && "mt-16"} px-6 py-3 sm:px-12 sm:py-6`}
+      id="how-it-works"
+    >
+      {title && (
+        <h3 className="text-center text-3xl font-bold">How it Works</h3>
+      )}
       <div className="relative md:w-1/2 md:left-1/4 lg:hidden">
         <div className="flex justify-between mt-3">
           <button
