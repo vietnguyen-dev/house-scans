@@ -8,6 +8,7 @@ import HowItWorksSlider from "@/components/how-it-works";
 import Help from "@/components/help";
 import Testimonials from "@/components/testimonials";
 import FAQ from "@/components/faq";
+import Contact from "@/components/contact";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
 
@@ -33,7 +34,7 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
       </Head>
       <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
         <Navbar />
-        <div id="hero" className="px-6 py-3 sm:px-12 sm:py-6">
+        <div id="hero" className="px-6 py-3 md:px-12 md:py-6 lg:py-20">
           <h1 className="text-5xl font-bold text-center mt-3  md:text-left md:w-1/2">
             3D Scans to help you sell your home
           </h1>
@@ -47,7 +48,7 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
               <Link href="/booking">Book Now</Link>
             </button>
             <button className="btn mt-3">
-              <Link href="/contact">Contact Us</Link>
+              <Link href="#contact">Contact Us</Link>
             </button>
           </div>
         </div>
@@ -56,6 +57,7 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
         <FAQ faqs={faqs} />
         <Testimonials testimonials={testimonials} />
         <CTA />
+        <Contact />
         <Footer />
       </main>
     </>

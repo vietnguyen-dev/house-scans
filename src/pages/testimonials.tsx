@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { Navbar } from "@/components/navbar";
 import CTA from "@/components/cta";
+import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -95,8 +96,8 @@ const Testimonials: React.FC<iTestimonialProps> = ({ testimonials }) => {
           ))}
         </div>
       </div>
-
       <CTA />
+      <Contact />
       <Footer />
     </main>
   );

@@ -5,6 +5,7 @@ import axios from "axios";
 
 import { Navbar } from "@/components/navbar";
 import CTA from "@/components/cta";
+import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -74,6 +75,7 @@ const FAQs: React.FC<iFAQsProps> = ({ faqs }) => {
           </div>
         </div>
         <CTA />
+        <Contact />
         <Footer />
       </main>
     </>

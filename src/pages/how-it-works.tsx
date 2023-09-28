@@ -4,6 +4,7 @@ import axios from "axios";
 import { Navbar } from "@/components/navbar";
 import HowItWorksSlider from "@/components/how-it-works";
 import CTA from "@/components/cta";
+import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 
 import { iWorks } from "@/components/how-it-works";
@@ -21,6 +22,7 @@ const HowItWorks: React.FC<iHowItWorks> = ({ works }) => {
       <h1 className="text-center mt-3 text-3xl font-bold">How It Works</h1>
       <HowItWorksSlider works={works} title={false} />
       <CTA />
+      <Contact />
       <Footer />
     </main>
   );
