@@ -44,6 +44,37 @@ const FAQs: React.FC<iFAQsProps> = ({ faqs }) => {
           360P Scans | FAQs | Frequently Asked Questions | Portland, OR |
           Vancouver, WA
         </title>
+        <meta
+          name="description"
+          content="Frequently asked questions page for 360 Property Scans in the Portland Metro Area."
+        />
+        <meta charSet="UTF-8" />
+        <meta name="author" content="David Bagnyuk" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Other meta tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="keywords"
+          content="Propert Scans, Sell my house fast, 3D house tours"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+
+        {/* Open Graph meta tags (for social sharing) */}
+        <meta
+          property="og:title"
+          content="360 Property Scans PNW | Helping you sell properties in the Portland Metro Area"
+        />
+        <meta
+          property="og:description"
+          content="Frequently asked questions page for 360 Property Scans in the Portland Metro Area."
+        />
+        <meta property="og:image" content="https://example.com/image.jpg" />
+        <meta property="og:url" content="https://example.com/my-page" />
       </Head>
       <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
         <Navbar />
