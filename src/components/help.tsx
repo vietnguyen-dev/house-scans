@@ -18,7 +18,7 @@ export interface iHelpProps {
 
 const Help: React.FC<iHelpProps> = ({ helps }) => {
   return (
-    <div className="mt-20 px-6 py-3 sm:px-12 sm:py-6" id="how-it-works">
+    <div className="mt-20 px-6 py-3 sm:px-12 sm:py-6" id="how-we-can-help">
       <h3 className="text-center text-3xl font-bold">How We Can Help You</h3>
       <p className="mt-6 text-center text-lg w-59 mx-auto md:w-96">
         There are many variations of passages of Lorem Ipsum available, but the

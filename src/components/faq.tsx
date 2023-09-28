@@ -15,7 +15,7 @@ const FAQ: React.FC<iFAQsProps> = ({ faqs }) => {
   };
 
   return (
-    <div className="mt-12 px-6 py-3 sm:px-12 sm:py-6">
+    <div className="mt-12 px-6 py-3 sm:px-12 sm:py-6" id="faqs">
       <h3 className="text-center text-3xl font-bold">FAQs</h3>
       <div className="mt-6 mx-3 md:w-2/3 md:mx-auto">
         <div className="join join-vertical">

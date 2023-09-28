@@ -2,7 +2,7 @@ import { iTestimonialProps, Rating } from "@/pages/testimonials";
 
 const Testimonials: React.FC<iTestimonialProps> = ({ testimonials }) => {
   return (
-    <div className="mt-12 px-6 py-3 sm:px-12 sm:py-6">
+    <div className="mt-12 px-6 py-3 sm:px-12 sm:py-6" id="testimonials">
       <h3 className="text-center text-3xl font-bold">Testimonials</h3>
       <div className="flex justify-center ">
         <div className="px-6 grid grid-cols-1 items-center md:grid-cols-2 lg:grid-cols-3">
