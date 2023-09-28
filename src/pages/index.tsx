@@ -56,8 +56,8 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
         <Help helps={helps} />
         <FAQ faqs={faqs} />
         <Testimonials testimonials={testimonials} />
-        <CTA />
         <Contact />
+        <CTA />
         <Footer />
       </main>
     </>

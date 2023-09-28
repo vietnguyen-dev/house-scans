@@ -105,8 +105,8 @@ const FAQs: React.FC<iFAQsProps> = ({ faqs }) => {
             ))}
           </div>
         </div>
-        <CTA />
         <Contact />
+        <CTA />
         <Footer />
       </main>
     </>
@@ -118,6 +118,7 @@ export default FAQs;
 export async function getServerSideProps() {
   try {
     const data = await axios.get(`${process.env.API_URL}/faqs`);
+    // const seo = await axios.get(`${process.env.API_URL}/seos?filters[page]`);
     const faqs = data.data.data;
     return {
       props: {

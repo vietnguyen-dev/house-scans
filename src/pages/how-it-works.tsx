@@ -21,8 +21,8 @@ const HowItWorks: React.FC<iHowItWorks> = ({ works }) => {
       <Navbar />
       <h1 className="text-center mt-3 text-3xl font-bold">How It Works</h1>
       <HowItWorksSlider works={works} title={false} />
-      <CTA />
       <Contact />
+      <CTA />
       <Footer />
     </main>
   );

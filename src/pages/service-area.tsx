@@ -31,8 +31,8 @@ const Service = () => {
           We are currently servicing the Portland Metro Area
         </p>
       </div>
-      <CTA />
       <Contact />
+      <CTA />
       <Footer />
     </main>
   );

@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <div className="flex justify-center mt-20" id="contact">
+    <div className="flex justify-center my-10" id="contact">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title justify-center">Contact Us</h2>
