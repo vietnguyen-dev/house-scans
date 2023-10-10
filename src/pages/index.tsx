@@ -34,16 +34,19 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
       </Head>
       <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
         <Navbar />
-        <div id="hero" className="px-6 py-3 md:px-12 md:py-6 lg:py-20">
-          <h1 className="text-5xl font-bold text-center mt-3  md:text-left md:w-1/2">
-            3D Scans to help you sell your home
+        <div
+          id="hero"
+          className="px-6 py-3 md:px-12 md:py-6 lg:py-20 lg:w-1/2 lg:mx-auto"
+        >
+          <h1 className="text-5xl font-bold text-center mt-3">
+            3D Scans to help you sell your property
           </h1>
-          <h3 className="text-lg text-center mt-9 md:text-left md:w-1/2">
+          <h3 className="text-lg text-center mt-9">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have suffered alteration in some form, by injected
             humour.
           </h3>
-          <div className="flex flex-col justify-center items-center mt-9 md:items-start">
+          <div className="mt-9 flex flex-col">
             <button className="btn btn-primary">
               <Link href="/booking">Book Now</Link>
             </button>
@@ -51,6 +54,15 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
               <Link href="#contact">Contact Us</Link>
             </button>
           </div>
+        </div>
+        <div className="flex justify-center mt-6">
+          <iframe
+            width="853"
+            height="480"
+            src="https://my.matterport.com/show/?m=gVhejTqh6qg"
+            // frameBorder="0"
+            allow="xr-spatial-tracking"
+          />
         </div>
         <HowItWorksSlider works={works} title={true} />
         <Help helps={helps} />
