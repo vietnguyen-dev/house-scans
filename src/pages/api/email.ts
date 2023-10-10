@@ -2,8 +2,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer';
 
-
-
 type Data = {
   message: string
 }
@@ -32,7 +30,7 @@ const handler = async (
             });
             const mailOptions = {
                 from: `"${data.name}" <${data.email}>`,
-                to: `${data.email}`,
+                to: `${process.env.NODE_EMAIL}`,
                 subject: `Property scan for ${data.name}?`,
                 text: `Hello David`,
                 html: 

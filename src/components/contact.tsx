@@ -26,7 +26,7 @@ const Contact = () => {
     phone: false,
     message: false,
   });
-  const [messageSent, setMessageSent] = useState<boolean>(false);
+  const [messageSent, setMessageSent] = useState<boolean | "error">(false);
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value;
@@ -73,7 +73,6 @@ const Contact = () => {
     const phoneError = data.phone.length > 0 && phonePattern.test(data.phone);
     const messageError = data.message.length > 20;
     if (nameError && emailError && phoneError && messageError) {
-      console.log("ok");
       return true;
     } else {
       console.log(nameError, emailError, phoneError, messageError);
@@ -94,27 +93,42 @@ const Contact = () => {
       phone: phone,
       message: message,
     };
-    console.log(data);
     const errors = findErrors(data);
     if (errors) {
-      console.log(data);
       const sent = await axios.post("/api/email", data);
       if (sent.status === 200) {
         setMessageSent(true);
+      } else {
+        setMessageSent("error");
       }
     }
   };
 
+  const submitDisabled =
+    name.length > 0 &&
+    email.length > 0 &&
+    phone.length > 0 &&
+    message.length > 0;
+
+  const cardBody = messageSent === true || messageSent === "error";
+
   return (
     <div className="flex justify-center my-10" id="contact">
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className={`card w-96 bg-base-100 shadow-xl`}>
         <div className="card-body">
           <h2 className="card-title justify-center">Contact Us</h2>
-          {messageSent ? (
-            <p className="text-center">
+          {messageSent === true && (
+            <p
+              className={`text-center ${
+                cardBody &&
+                `h-56 flex justify-center items-center
+            `
+              }`}
+            >
               Thanks for Contacting us! We will respond in the next 24 hours.
             </p>
-          ) : (
+          )}
+          {messageSent === false && (
             <>
               <p className="text-center">
                 Send us a message if you have any questions!
@@ -176,12 +190,28 @@ const Contact = () => {
                   </label>
                 )}
                 <div className="card-actions justify-end mt-3">
-                  <button className="btn btn-success w-full" type="submit">
+                  <button
+                    className="btn btn-success w-full"
+                    type="submit"
+                    disabled={!submitDisabled}
+                  >
                     Submit
                   </button>
                 </div>
               </form>
             </>
+          )}
+          {messageSent === "error" && (
+            <p
+              className={`text-center ${
+                cardBody &&
+                `h-56 flex justify-center items-center
+          `
+              }`}
+            >
+              There was an error trying to send you a message. Please reload and
+              try again or wait a few minutes and try again
+            </p>
           )}
         </div>
       </div>
