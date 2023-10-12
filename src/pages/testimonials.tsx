@@ -96,8 +96,8 @@ const Testimonials: React.FC<iTestimonialProps> = ({ testimonials }) => {
           ))}
         </div>
       </div>
-      <CTA />
       <Contact />
+      <CTA />
       <Footer />
     </main>
   );

@@ -54,7 +54,10 @@ export const Navbar = () => {
         </Link>
       </div>
       <div className="flex-none">
-        <button className="btn btn-primary flex-none ">
+        <button
+          className="btn btn-primary flex-none "
+          disabled={path?.includes("booking")}
+        >
           <Link href="/booking">Book Now</Link>
         </button>
         <button

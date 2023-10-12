@@ -83,7 +83,7 @@ const FAQs: React.FC<iFAQsProps> = ({ faqs }) => {
           <div className="join join-vertical">
             {faqs.map((faq, index) => (
               <div
-                className="collapse collapse-plus join-item border border-base-300"
+                className="collapse collapse-plus join-item border border-base-300 "
                 key={index}
               >
                 <input

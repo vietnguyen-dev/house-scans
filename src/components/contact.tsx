@@ -116,7 +116,7 @@ const Contact = () => {
     <div className="flex justify-center my-10" id="contact">
       <div className={`card w-96 bg-base-100 shadow-xl`}>
         <div className="card-body">
-          <h2 className="card-title justify-center">Contact Us</h2>
+          <h3 className="text-center text-3xl font-bold">Contact Us</h3>
           {messageSent === true && (
             <p
               className={`text-center ${

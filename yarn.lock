@@ -985,6 +985,11 @@ quickselect@^2.0.0:
   resolved "https://registry.yarnpkg.com/quickselect/-/quickselect-2.0.0.tgz#f19680a486a5eefb581303e023e98faaf25dd018"
   integrity sha512-RKJ22hX8mHe3Y6wH/N3wCM6BWtjaxIyyUIkpHOvfFnxdI4yD4tBXEBKSbriGujF6jnSVkJrffuo6vxACiSSxIw==
 
+react-calendly@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-calendly/-/react-calendly-4.2.0.tgz#f5056b58d933e521e82e62af0dbdf9e5c45ecf80"
+  integrity sha512-MCewRpk9phveX+1qxXDZ7dAcMmAdWkspU7C9XqChIItQeQ+pTWguM/eAC7yVaAA988mpwXx61wS63TKZq3Znpw==
+
 react-dom@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
