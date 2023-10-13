@@ -26,8 +26,8 @@ const handler = async (
                 host: process.env.AWS_SES_ENDPOINT,
                 port: parseInt(process.env.AWS_SES_PORT!),
                 auth: {
-                    user: process.env.AWS_SMTP_USERNAME, // Replace with your Gmail email address
-                    pass: process.env.AWS_SMTP_PASSWORD, // Replace with your Gmail password
+                    user: process.env.AWS_SMTP_USERNAME, 
+                    pass: process.env.AWS_SMTP_PASSWORD, 
                 },
             });
             const mailOptions = {
