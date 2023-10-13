@@ -94,19 +94,45 @@ export const Navbar = () => {
             </button>
           </form>
           {/* <h3 className="font-bold text-lg">Hello!</h3> */}
-          <ul className="py-4 flex flex-col">
-            <Link href="/how-it-works" className="mr-3 mb-3 text-right text-xl">
+          <ul className="pt-4 flex flex-col">
+            <Link
+              href="/how-it-works"
+              className={`mr-3 mb-3 text-right text-xl ${
+                path?.includes("how-it-works") && "link"
+              } hover:link`}
+            >
               How it Works
             </Link>
-            <Link href="/faq" className="mr-3 mb-3 text-right text-xl">
+            <Link
+              href="/faq"
+              className={`mr-3 mb-3 text-right text-xl ${
+                path?.includes("faq") && "link"
+              } hover:link`}
+            >
               FAQs
             </Link>
-            <Link href="/testimonials" className="mr-3 mb-3 text-right text-xl">
+            <Link
+              href="/testimonials"
+              className={`mr-3 mb-3 text-right text-xl ${
+                path?.includes("testimonials") && "link"
+              } hover:link`}
+            >
               Testimonials
             </Link>
-            <Link href="/service-area" className="mr-3 mb-3 text-right text-xl">
+            <Link
+              href="/service-area"
+              className={`mr-3 mb-3 text-right text-xl ${
+                path?.includes("service-area") && "link"
+              } hover:link`}
+            >
               Service Area
             </Link>
+            <button
+              className="btn btn-primary flex-none mt-6 max-w-xs w-32 ml-auto"
+              disabled={path?.includes("booking")}
+            >
+              <Link href="/booking">Book Now</Link>
+            </button>
           </ul>
         </div>
       </dialog>

@@ -43,7 +43,10 @@ const Testimonials: React.FC<iTestimonialProps> = ({ testimonials }) => {
                   <h3 className="font-bold text-lg">
                     {testimonial.attributes.name}
                   </h3>
-                  <p className="py-4">{testimonial.attributes.review}</p>
+                  <div className="rating my-2">
+                    <Rating number={testimonial.attributes.rating} />
+                  </div>
+                  <p>{testimonial.attributes.review}</p>
                   <div className="modal-action">
                     <form method="dialog">
                       {/* if there is a button in form, it will close the modal */}
