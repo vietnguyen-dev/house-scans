@@ -46,11 +46,11 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
             the majority have suffered alteration in some form, by injected
             humour.
           </h3>
-          <div className="mt-9 flex flex-col">
-            <button className="btn btn-primary">
+          <div className="mt-9 flex flex-col justify-center items-center">
+            <button className="btn btn-primary max-w-xs">
               <Link href="/booking">Book Now</Link>
             </button>
-            <button className="btn mt-3">
+            <button className="btn mt-3 max-w-xs">
               <Link href="#contact">Contact Us</Link>
             </button>
           </div>

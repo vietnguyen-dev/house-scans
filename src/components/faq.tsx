@@ -17,11 +17,11 @@ const FAQ: React.FC<iFAQsProps> = ({ faqs }) => {
   return (
     <div className="mt-12 px-6 py-3 sm:px-12 sm:py-6" id="faqs">
       <h3 className="text-center text-3xl font-bold">FAQs</h3>
-      <div className="mt-6 mx-3 md:w-2/3 md:mx-auto">
+      <div className="mt-6 mx-3 md:w-2/3 md:mx-auto flex justify-center">
         <div className="join join-vertical">
           {faqs.map((faq, index) => (
             <div
-              className="collapse collapse-plus join-item border border-base-300"
+              className="collapse collapse-plus join-item border border-base-300 max-w-lg"
               key={index}
             >
               <input
