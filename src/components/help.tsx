@@ -24,14 +24,14 @@ const Help: React.FC<iHelpProps> = ({ helps }) => {
         There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour.
       </p>
-      <div className="py-8 flex justify-center">
-        <div className="grid grid-cols-1 items-center md:grid-cols-2 md:gap-16 lg:grid-cols-3 ">
+      <div className="py-8 flex justify-center lg:py-4">
+        <div className="grid grid-cols-1 items-center md:grid-cols-2 md:gap-16 lg:grid-cols-3 lg:gap-24">
           {helps.map((help) => (
             <div
-              className="w-52 mb-10  flex justify-center flex-col items-center"
+              className="w-52 mb-16 flex justify-center flex-col items-center"
               key={help.id}
             >
-              <h4 className="text-lg font-semibold text-center">
+              <h4 className="text-xl font-semibold text-center">
                 {help.attributes.how}
               </h4>
               <p className="mt-3 text-center">

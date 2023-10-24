@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export interface iWorks {
@@ -16,6 +17,41 @@ export interface iHowItWorksSliderProps {
   works: iWorks[];
   title: boolean | null;
 }
+
+interface iProperImgage {
+  id: number;
+}
+
+const ProperImage: React.FC<iProperImgage> = ({ id }) => {
+  if (id === 1) {
+    return (
+      <Image
+        src="/book-an-appointment.jpg"
+        height={300}
+        width={350}
+        alt="scanning property image"
+      />
+    );
+  } else if (id === 2) {
+    return (
+      <Image
+        src="/scan-property.jpg"
+        height={300}
+        width={350}
+        alt="scanning property image"
+      />
+    );
+  } else {
+    return (
+      <Image
+        src={"/email-notify.jpeg"}
+        height={300}
+        width={350}
+        alt="scanning property image"
+      />
+    );
+  }
+};
 
 const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({
   works,
@@ -97,7 +133,7 @@ const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({
             onTouchEnd={handleTouchEnd}
           >
             <figure>
-              <img
+              <Image
                 src="/book-an-appointment.jpg"
                 alt="Shoes"
                 className="rounded-xl"
@@ -124,7 +160,7 @@ const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({
             onTouchEnd={handleTouchEnd}
           >
             <figure>
-              <img
+              <Image
                 src="/scan-property.jpg"
                 alt="Shoes"
                 className="rounded-xl"
@@ -135,8 +171,10 @@ const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({
             <div className="card-body items-center text-center">
               <h2 className="card-title">{works[1].attributes.title}</h2>
               <p>{works[1].attributes.description}</p>
-              <div className="card-actions">
-                <button className="btn btn-primary">Buy Now</button>
+              <div className="card-actions mt-3">
+                <button className="btn btn-primary flex-none ">
+                  <Link href="/booking">Book Now</Link>
+                </button>
               </div>
             </div>
           </div>
@@ -149,8 +187,8 @@ const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({
             onTouchEnd={handleTouchEnd}
           >
             <figure>
-              <img
-                src="/email-notify.jpeg"
+              <Image
+                src={"/email-notify.jpeg"}
                 alt="Shoes"
                 className="rounded-xl"
                 height={200}
@@ -160,27 +198,24 @@ const HowItWorksSlider: React.FC<iHowItWorksSliderProps> = ({
             <div className="card-body items-center text-center">
               <h2 className="card-title">{works[2].attributes.title}</h2>
               <p>{works[2].attributes.description}</p>
-              <div className="card-actions">
-                <button className="btn btn-primary">Buy Now</button>
+              <div className="card-actions mt-3">
+                <button className="btn btn-primary flex-none ">
+                  <Link href="/booking">Book Now</Link>
+                </button>
               </div>
             </div>
           </div>
         )}
       </div>
       <div className="hidden mt-3 lg:block">
-        <div className="flex gap-4 mx-24">
+        <div className="flex gap-4 justify-center mx-24 lg:mx-0">
           {works.map((work) => (
             <div className="card bg-base-100 w-96 shadow-xl" key={work.id}>
               <figure>
-                <img
-                  src="/email-notify.jpeg"
-                  alt="Shoes"
-                  className="rounded-xl"
-                  height={300}
-                  width={350}
-                />
+                <ProperImage id={work.id!} />
               </figure>
               <div className="card-body items-center text-center">
+                {/* <p>{work.id}</p> */}
                 <h2 className="card-title">{work.attributes.title}</h2>
                 <p>{work.attributes.description}</p>
                 <div className="card-actions">
