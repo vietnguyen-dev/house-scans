@@ -31,6 +31,37 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
     <>
       <Head>
         <title>360 Property Scans | Home</title>
+        <meta
+          name="description"
+          content="Home Page for 360 Property Scans in the Portland Metro Area. Helping you sell your property"
+        />
+        <meta charSet="UTF-8" />
+        <meta name="author" content="David Bagnyuk" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Other meta tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="keywords"
+          content="Propert Scans, Sell my house fast, 3D house tours"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+
+        {/* Open Graph meta tags (for social sharing) */}
+        <meta
+          property="og:title"
+          content="360 Property Scans PNW | Helping you sell properties in the Portland Metro Area"
+        />
+        <meta
+          property="og:description"
+          content="Frequently asked questions page for 360 Property Scans in the Portland Metro Area."
+        />
+        <meta property="og:image" content="https://example.com/image.jpg" />
+        <meta property="og:url" content="https://ex
       </Head>
       <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
         <Navbar />
@@ -41,11 +72,11 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
           <h1 className="text-5xl font-bold text-center mt-3">
             3D Scans to help you sell your property
           </h1>
-          <h3 className="text-lg text-center mt-9">
+          <h2 className="text-lg text-center mt-9">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have suffered alteration in some form, by injected
             humour.
-          </h3>
+          </h2>
           <div className="mt-9 flex flex-col justify-center items-center">
             <button className="btn btn-primary max-w-xs">
               <Link href="/booking">Book Now</Link>
