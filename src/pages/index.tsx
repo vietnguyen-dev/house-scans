@@ -61,8 +61,7 @@ const Home: React.FC<iHomeProps> = ({ testimonials, faqs, works, helps }) => {
           content="Frequently asked questions page for 360 Property Scans in the Portland Metro Area."
         />
         <meta property="og:image" content="https://example.com/image.jpg" />
-        <meta property="og:url" content="https://ex
-      </Head>
+        <meta property="og:url" content="https://example.com/my-page" />
       <main className={`${inter.className} xl:w-3/4 xl:mx-auto`}>
         <Navbar />
         <div
